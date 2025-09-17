@@ -1,0 +1,24 @@
+{
+  "name": "hyper-vpn-script",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "server.js",
+  "engines": {
+    "node": ">=18.17"
+  },
+  "scripts": {
+    "dev": "nodemon --watch server.js --ext js --exec \"node -r dotenv/config server.js\"",
+    "start": "node -r dotenv/config server.js",
+    "start:noenv": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
