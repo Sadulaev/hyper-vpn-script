@@ -200,7 +200,7 @@ app.get('/loads', async (_, res) => {
 // });
 
 // Выдать ключ (эндпоинт для PuzzleBot): POST /issue-key { clientName, months }
-app.get('/get-key', async (req, res) => {
+app.post('/get-key', async (req, res) => {
   try {
     const servers = await getServers();
 
@@ -232,7 +232,7 @@ app.get('/get-key', async (req, res) => {
       return res.status(503).json({ error: 'No available servers' });
     }
 
-    const vlessObj = await createKey3xui(bestServerInfo, { inboundId: bestServer.firstInboundId, clientName: randomUUID(), months: +req.query.months || 1 });
+    const vlessObj = await createKey3xui(bestServerInfo, { inboundId: bestServer.firstInboundId, clientName: randomUUID(), months: +req.body.period || 1 });
 
     res.json(vlessObj);
   } catch (err) {
