@@ -25,10 +25,10 @@ export function msExpiryEpochPlusOneDay(months) {
 }
 
 // вернуть первый самый оптимальный сервер из списка
-export function chooseBestServer(servers) {
-  if (servers.length === 0) return null;
+export function chooseBestServer(serversData) {
+  if (serversData.length === 0) return null;
 
-  return servers.reduce((acc, server) => {
+  return serversData.reduce((acc, server) => {
     if (server.currentUsers < server.usersLimit) {
       if (acc.id && server.currentUsers < acc.currentUsers) {
         return { id: server.id, currentUsers: server.currentUsers, firstInboundId: server.firstInboundId }; // новый лучший (меньше юзеров и не превышен лимит)

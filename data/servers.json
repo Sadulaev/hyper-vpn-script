@@ -1,5 +1,60 @@
 {
   "servers": [
-    
+    {
+      "id": "gm-1",
+      "apiUrl": "https://gm-1.hyper-vpn.ru:5050/",
+      "webBasePath": "GJvQEHqUZAqTWaJmwv",
+      "username": "khamzat",
+      "password": "neron",
+      "usersLimit": 100,
+      "security": "reality",
+      "pbk": "JHF6xDPWv14PYE2hMJxibYdgRBKDjdNsqWs5O0SqBSM",
+      "fp": "chrome",
+      "sni": "google.com",
+      "sid": "0e81",
+      "spx": ""
+    },
+    {
+      "id": "am-1",
+      "apiUrl": "https://am-1.hyper-vpn.ru:5050/",
+      "webBasePath": "VxS5ATUWJdS8GFCkPA",
+      "username": "khamzat",
+      "password": "neron",
+      "usersLimit": 75,
+      "security": "reality",
+      "pbk": "JHF6xDPWv14PYE2hMJxibYdgRBKDjdNsqWs5O0SqBSM",
+      "fp": "chrome",
+      "sni": "google.com",
+      "sid": "6a63534a3b4c",
+      "spx": ""
+    },
+    {
+      "id": "am-2",
+      "apiUrl": "https://am-2.hyper-vpn.ru:5050/",
+      "webBasePath": "VuiGtkfZih35sBvYiW",
+      "username": "khamzat",
+      "password": "neron",
+      "usersLimit": 75,
+      "security": "reality",
+      "pbk": "QtylMkpkAsJ41gYXYHUk_Zxnr1FlUea60BF_Q0q8dxY",
+      "fp": "chrome",
+      "sni": "google.com",
+      "sid": "49e352ff05a6",
+      "spx": ""
+    },
+    {
+      "id": "am-3",
+      "apiUrl": "https://am-3.hyper-vpn.ru:5050/",
+      "webBasePath": "UXbqmfJV9lRXb3uSNu",
+      "username": "khamzat",
+      "password": "neron",
+      "usersLimit": 75,
+      "security": "reality",
+      "pbk": "dptgK0gDXdZ8422Gjtsc0y7JBd9poyMyo9oNwE-vqw4",
+      "fp": "chrome",
+      "sni": "google.com",
+      "sid": "d8",
+      "spx": ""
+    }
   ]
 }

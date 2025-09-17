@@ -42,7 +42,7 @@ const getLoginCookies = async (server) => {
   try {
     const loginUrl = new URL(`/${server.webBasePath}/login`, server.apiUrl).toString();
 
-    console.log(loginUrl)
+    // console.log(loginUrl)
 
     const form = new URLSearchParams({
       username: server.username,
@@ -200,7 +200,7 @@ app.get('/loads', async (_, res) => {
 // });
 
 // Выдать ключ (эндпоинт для PuzzleBot): POST /issue-key { clientName, months }
-app.post('/get-key', async (req, res) => {
+app.get('/get-key', async (req, res) => {
   try {
     const servers = await getServers();
 
@@ -226,13 +226,13 @@ app.post('/get-key', async (req, res) => {
     const bestServer = chooseBestServer(serversWithIdsAndLoads);
     const bestServerInfo = servers.find(s => s.id === chooseBestServer(serversWithIdsAndLoads)?.id);
 
-    console.log(bestServer);
+    // console.log(bestServer);
 
     if (!bestServer) {
       return res.status(503).json({ error: 'No available servers' });
     }
 
-    const vlessObj = await createKey3xui(bestServerInfo, { inboundId: bestServer.firstInboundId, clientName: randomUUID(), months: +req.body.period || 1 });
+    const vlessObj = await createKey3xui(bestServerInfo, { inboundId: bestServer.firstInboundId, clientName: randomUUID(), months: +req.query.period || 1 });
 
     res.json(vlessObj);
   } catch (err) {
