@@ -232,6 +232,8 @@ app.get('/get-key', async (req, res) => {
       return res.status(503).json({ error: 'No available servers' });
     }
 
+    console.log(bestServerInfo);
+
     const vlessObj = await createKey3xui(bestServerInfo, { inboundId: bestServer.firstInboundId, clientName: randomUUID(), months: +req.query.period || 1 });
 
     res.json(vlessObj);
