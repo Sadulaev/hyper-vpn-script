@@ -226,13 +226,9 @@ app.get('/get-key', async (req, res) => {
     const bestServer = chooseBestServer(serversWithIdsAndLoads);
     const bestServerInfo = servers.find(s => s.id === chooseBestServer(serversWithIdsAndLoads)?.id);
 
-    // console.log(bestServer);
-
     if (!bestServer) {
       return res.status(503).json({ error: 'No available servers' });
     }
-
-    console.log(bestServerInfo);
 
     const vlessObj = await createKey3xui(bestServerInfo, { inboundId: bestServer.firstInboundId, clientName: randomUUID(), months: +req.query.period || 1 });
 
