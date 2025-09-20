@@ -13,7 +13,7 @@ export function buildVlessLinkFromServerConfig(server, { id, clientName }) {
   params.set('spx', server.spx);
 
   // const remark = encodeURIComponent(clientName);
-  return `vless://${id}@${host}:${port}?${params.toString()}%2F#HyperVPN`;
+  return `vless://${id}@${host}:${port}?${params.toString()}%2F#HyperVPN-${server.id}`;
 }
 
 // возвращает epoch (секунды) с запасом в 1 день
